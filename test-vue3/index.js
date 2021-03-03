@@ -11,7 +11,9 @@ const {
   isReadonly,
   isProxy,
   markRaw,
-  toRaw
+  toRaw,
+  stop,
+  toRefs
 } = require('@vue/reactivity')
 
 { 
@@ -100,4 +102,26 @@ const {
   })
   obj.test += '1'
   obj.test += '2'
+}
+
+/**
+ * stop 停止一个副作用
+ */
+{
+  let foo = ref(10)
+  let run = effect(() => {
+    console.log(foo.value)
+  })
+  stop(run)
+  foo.value += 1
+
+}
+
+/**
+ * ref isRef toRef  toRefs
+ */
+{
+  const obj = reactive({ a:1,b:2,c3 })
+  const obj2 = { ...toRefs(obj)  }
+  
 }
