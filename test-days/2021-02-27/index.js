@@ -9,6 +9,10 @@ es6模块 与 commonJs模块的差异
     由于 ES6 输入的模块变量，只是一个“符号连接”，所以这个变量是只读的，对它进行重新赋值会报错
 
 2、commonJs模块是运行时加载，es6模块是编译时输出接口
+因为 CommonJS 加载的是一个对象（即module.exports属性），
+该对象只有在脚本运行完才会生成。而 ES6 模块不是对象，它的对外接口只是一种静态定义，在代码静态解析阶段就会生成。
+
+
 
 3、commonJs的require是同步加载，es6模块的import的是异步加载
 
@@ -24,6 +28,13 @@ import foo from './foo.js'
 if (someCondition) {
   foo = require('./foo.js');
 }
+
+
+commonjs 循环加载问题
+
+CommonJS 模块的重要特性是加载时执行，即脚本代码在require的时候，就会全部执行。
+一旦出现某个模块被"循环加载"，就只输出已经执行的部分，还未执行的部分不会输出
+
 */
 
 /*
