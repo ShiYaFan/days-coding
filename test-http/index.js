@@ -83,3 +83,8 @@ setTimeout,setImmediate 恰巧又不是同步任务(或者说优先级不够 pro
 宏任务: script, setTimeout, setInterval, setImmediate, I/O, UI rendering;
 微任务: process.nextTick, Promise, Object.observe, MutationObserver;
 */
+
+
+/**
+ * http协议的知识
+ */
