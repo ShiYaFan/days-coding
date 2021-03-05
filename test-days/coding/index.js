@@ -87,3 +87,16 @@ console.log(array)
 
 
 console.log(maxArea([1, 8, 6, 2, 5, 4, 8, 3, 7]))
+
+
+
+function reverse(x){
+  let rev = 0
+  while(x != 0){
+    let pop = x % 10
+    x = x / 10 | 0
+    rev = rev * 10 + pop
+    console.log(x,rev)
+  }
+  return (rev | 0) === rev ? rev : 0
+}
