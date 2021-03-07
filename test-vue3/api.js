@@ -99,7 +99,7 @@ const AsyncHelloWorld = defineAsyncComponent(() => import('./components/HelloWor
 /**
  * 选项
  */
-{
+let a = {
   data(){
     return {}
   },
@@ -116,7 +116,7 @@ const AsyncHelloWorld = defineAsyncComponent(() => import('./components/HelloWor
 
   },
   emits: [],
-    directives{
+  directives : {
     'focus': {
 
     }
@@ -128,7 +128,7 @@ const AsyncHelloWorld = defineAsyncComponent(() => import('./components/HelloWor
     extends: MyComponent,
     mixins: [],
 
-  }
+}
 
 /**
  * 实例property
