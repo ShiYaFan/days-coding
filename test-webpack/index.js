@@ -1,5 +1,22 @@
 
-import { reactive } from 'vue'
+import Icon from './assert/mgt-logo.png'
+import { cube } from './math'
+import { reactive } from '@vue/reactivity'
 
-let a = reactive({})
-console.log(a)
+let a = reactive({ a:10 })
+ console.log(a)
+
+{
+  const element = document.querySelector('.container');
+
+  const myIcon = new Image();
+  myIcon.src = Icon;
+  // element.appendChild(myIcon)
+
+  class People { 
+    constructor(){
+      console.log(cube(10))
+     }
+  }
+  new People()
+}
