@@ -24,7 +24,6 @@ class HelloWorldPlugin {
             //     return source.length
             //   }
             // }
-
           })
 
         })

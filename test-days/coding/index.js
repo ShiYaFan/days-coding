@@ -4,8 +4,8 @@
 function reverseNode(head) {
   let pre = null
   let current = head
-  while(current !== null){
-    let temp = current.next 
+  while (current !== null) {
+    let temp = current.next
     current.next = pre
     pre = current
     current = temp
@@ -73,30 +73,69 @@ console.log(array)
  * 盛最多水
  * [1,8,6,2,5,4,8,3,7]
  */
-  //暴力破解
- function maxArea(height) {
+//暴力破解
+function maxArea(height) {
   let max = 0
-  for(let i = 0; i < height.length - 1; i++){
-    for(let j = i + 1;j < height.length; j++){
-      max = Math.max(max,(j-i) * (Math.min(height[j],height[i])))
+  for (let i = 0; i < height.length - 1; i++) {
+    for (let j = i + 1; j < height.length; j++) {
+      max = Math.max(max, (j - i) * (Math.min(height[j], height[i])))
     }
   }
   return max
- }
- //双指针破解
+}
+//双指针破解
 
 
 console.log(maxArea([1, 8, 6, 2, 5, 4, 8, 3, 7]))
 
 
 
-function reverse(x){
+function reverse(x) {
   let rev = 0
-  while(x != 0){
+  while (x != 0) {
     let pop = x % 10
     x = x / 10 | 0
     rev = rev * 10 + pop
-    console.log(x,rev)
+    console.log(x, rev)
   }
   return (rev | 0) === rev ? rev : 0
 }
+
+
+
+
+
+
+//最大回文
+const validPalindromic = function (array, left, right) {
+  while (left < right) {
+    if (array[left] !== array[right]) {
+      return false
+    }
+    left++
+    right--
+  }
+  return true
+}
+
+const longestPalindromic = function (str) {
+  if (str.length < 2) {
+    return str
+  }
+  let maxLength = 1
+  let begin = 0
+  let array = str.split('')
+  let length = array.length
+  for (let i = 0; i < length - 1; i++) {
+    for (let j = i + 1; j < length; j++) {
+      if (j - i + 1 > maxLength && validPalindromic(array, i, j)) {
+        begin = i
+        maxLength = j - i + 1
+      }
+    }
+  }
+  return str.substring(begin, begin + maxLength)
+}
+
+
+

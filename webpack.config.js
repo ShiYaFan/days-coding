@@ -11,11 +11,6 @@ module.exports = {
     chunkFilename: '[name].bundle.js',
     path: path.resolve(__dirname, 'dist'),
   },
-  optimization: {
-    splitChunks: {
-      chunks: 'all',
-    }
-  },
   mode: 'development',
   module: {
     rules: [
@@ -49,7 +44,7 @@ module.exports = {
  * 1、缩小文件匹配范围(include/exclude)
  * 2、缓存loader的执行结果(cacheDirectory)
  * 3、HappyPack是让webpack对loader的执行过程，从单一进程形式扩展为多进程模式，也就是将任务分解给多个子进程去并发的执行，子进程处理完后再把结果发送给主进程。从而加速代码构建 与 DLL动态链接库结合来使用更佳。
- *
+ * 4、DllPlugin DllReferencePlugin
  * 编写插件
  * https://www.cnblogs.com/tugenhua0707/p/11332463.html
  */

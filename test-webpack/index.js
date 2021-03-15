@@ -20,3 +20,12 @@ let a = reactive({ a:10 })
   }
   new People()
 }
+
+
+const withContainer = function(component){  
+  
+  return function(props) {  
+
+    return <component {...props}/>
+  }
+}
